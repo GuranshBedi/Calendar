@@ -18,7 +18,7 @@ const CalendarApp = () => {
   });
 
   useEffect(() => {
-    document.title = 'My Calendar App';
+    document.title = 'Calendar';
     const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
     favicon.type = 'image/svg+xml';
     favicon.rel = 'icon';

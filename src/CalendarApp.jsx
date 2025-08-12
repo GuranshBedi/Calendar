@@ -5,7 +5,7 @@ const CalendarApp = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [events, setEvents] = useState([]);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+  const [viewMode, setViewMode] = useState('grid');
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showEventModal, setShowEventModal] = useState(false);
   const [showEventDetails, setShowEventDetails] = useState(false);
@@ -211,8 +211,8 @@ const CalendarApp = () => {
     : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500';
 
   return (
-    <div className={`min-h-screen ${themeClasses} transition-colors duration-200`}>
-      <div className="container mx-auto p-4 max-w-6xl">
+    <div className={`min-h-screen ${themeClasses} transition-colors`}>
+      <div className="mx-auto p-4 max-w-6xl">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-4">
             <Calendar className="h-8 w-8 text-blue-500" />
@@ -299,8 +299,6 @@ const CalendarApp = () => {
                 </div>
               ))}
             </div>
-            
-            {/* Calendar Grid */}
             <div className="grid grid-cols-7">
               {getDaysInMonth(currentDate).map((date, index) => (
                 <div
